@@ -1,0 +1,37 @@
+import tkinter as tk
+import cv2
+
+root = tk.Tk()
+root.title("MegaMind's photo editor")
+root.geometry("500x500+500+500")
+root.wm_resizable(width=False, height=False)
+root.configure(bg="#364a85")
+
+image = cv2.imread("assets/k.jpg")
+
+def img():
+    #open the file explorer
+    img = cv2.imshow("k", image)
+    pass
+
+def black_and_white():
+    pass
+
+def resize():
+    pass
+
+im = tk.Button(root, text="Choose Image",command= img,  font="Time 10 bold", bg="#f04dfe")
+im.place(width=150, height=50, x=30, y=50)
+
+resize = tk.Button(root, text="Resize", command= resize,  font="Time 10 bold", bg="#f419da")
+resize.place(width=100, height=50, x=25, y=400)
+
+gray = tk.Button(root, text="Grayscale", command= black_and_white,  font="Time 10 bold", bg="#c6c2c2")
+gray.place(width=200, height=50, x=150, y=400)
+
+save = tk.Button(root, text="Save Image", font="Time 10 bold", bg="#66f6ed")
+save.place(width=100, height=50, x=375, y=400)
+
+
+
+root.mainloop()
